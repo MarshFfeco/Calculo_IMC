@@ -1,0 +1,76 @@
+:root {
+    --red-color: #FF9A91;
+    --red-color-dark: #913D36;
+    --green-color: #68DE9D;
+    --green-color-dark: #279156;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--red-color-dark);
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+/*==========CLASSES REUTILIZAVEIS==========*/
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*==========PARA AS CLASSES CRIADAS COM JAVASCRIPT==========*/
+.resultado-content-true {
+    background-color: rgba(89, 216, 89, 0.933);
+    padding: 10px 20px;
+}
+.resultado-content-false {
+    background-color: crimson;
+    padding: 10px 20px;
+}
+
+/*==========FORMULARIO==========*/
+
+form fieldset, form input, form label {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form button {
+    width: 100%;
+    margin-top: 30px;
+    border: none;
+    background-color: var(--red-color-dark);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    cursor: pointer;
+}
+
+form input:focus {
+    outline: 1px solid var(--green-color);
+}
+
+form button:hover {
+    background-color: var(--red-color);
+}
+
+form button:active {
+    background-color: crimson;
+}
