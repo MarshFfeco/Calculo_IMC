@@ -1,7 +1,8 @@
-function perfeita() {
+/*====================FUNÇÃO PARA CALCULA O IMC====================*/
+function DefinirImc() {
     const form = document.querySelector('#peso_Imc');
+    
     /*==========NÃO DEIXA A PAGINA RECARREGAR==========*/
-
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -96,6 +97,14 @@ function perfeita() {
         return p;
     }
 }
-    
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/*====================FUNÇÃO PARA MOSTRA A DATA====================*/ 
+function mostraData() {
+    const h1 = document.querySelector(".container h1")
 
-perfeita();
+    h1.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: "full", timeStyle: "medium" }).format(new Date())
+}
+
+
+DefinirImc();
+mostraData();
