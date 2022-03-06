@@ -37,6 +37,13 @@ body {
     padding: 10px 20px;
 }
 
+/*==========PARA AS TAGS CRIADAS COM JAVASCRIPT==========*/
+.textJS {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
 /*==========FORMULARIO==========*/
 
 form fieldset, form input, form label {
@@ -73,4 +80,27 @@ form button:hover {
 
 form button:active {
     background-color: crimson;
+}
+
+/*==========RELOGIO==========*/
+
+.pausado {
+    color: crimson;
+}
+
+.contadores {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3rem;
+}
+
+.button, .button button {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#hours, #minutes, #secunds {
+    display: inline;
 }
