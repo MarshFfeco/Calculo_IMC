@@ -102,7 +102,9 @@ function DefinirImc() {
 function mostraData() {
     const h1 = document.querySelector(".container h1")
 
-    h1.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: "full", timeStyle: "medium" }).format(new Date())
+    setInterval(function () { h1.innerHTML = Intl.DateTimeFormat('pt-BR', { dateStyle: "full", timeStyle: "medium" }).format(new Date())
+                }, 1000);
+
 }
 
 /*====================FUNÇÃO PARA CRIAR TAGS COM LAÇO DE REPETIÇÃO====================*/
@@ -205,9 +207,77 @@ function relogio() {
     }
 
 }
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/*====================FUNÇÃO PARA CRIAR UMA LISTA DE TAREFAS====================*/ 
+function listaTarefas() {
+    const input_tarefa = document.querySelector("#input_nova_tarefa"); 
+    const button_tarefa = document.querySelector("#button_nova_tarefa");
+    const tarefa = document.querySelector(".tarefas");
+
+    button_tarefa.addEventListener("click", function() {
+        if(!input_tarefa.value) return;
+
+        printLI(input_tarefa.value);
+        limpaInput();
+    });
+    input_tarefa.addEventListener("keypress", function(e) {
+        if(e.key === "Enter") {
+            if(!input_tarefa.value) return;
+
+            printLI(input_tarefa.value);
+            limpaInput();
+
+            input_tarefa.focus();
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        const elemento = e.target;
+
+        if(elemento.classList.contains('apagar')) {
+            elemento.parentElement.remove();
+        }
+    });
+
+
+    /*==========FUNÇÃO PARA CRIAR AS LI==========*/
+    function criarLI() {
+        const li = document.createElement("li");
+
+        return li;
+    }
+    /*==========FUNÇÃO PARA ADICIONAR NO HTML AS LI==========*/
+    function printLI(tarefaText) {
+        const li = criarLI();
+        li.innerText = tarefaText;
+
+        tarefa.appendChild(li);
+        limpaInput();
+        criarButton(li);
+        saveTarefa();
+    }
+      /*==========FUNÇÃO PARA LIMPAR INPUT==========*/
+      function limpaInput() {
+        input_tarefa.value = "";XMLDocument
+    }
+    /*==========FUNÇÃO PARA CRIAR ABUTTON APAGAR==========*/
+    function criarButton(li) {
+        li.innerText += " ";
+        const buttonApagar = document.createElement("button");
+        buttonApagar.innerText = 'apagar';
+        buttonApagar.setAttribute('class', 'apagar');
+        li.appendChild(buttonApagar);
+    }
+    /*==========FUNÇÃO PARA SALVAR AS TAREFAS==========*/
+    function saveTarefa() {
+        
+    }
+}
+
 
 /*==================== CHAMADA DE FUNÇÃO PRINCIPAL ====================*/
 DefinirImc();
 mostraData();
 criarTagFor();
 relogio();
+listaTarefas();

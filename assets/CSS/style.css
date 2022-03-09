@@ -104,3 +104,14 @@ form button:active {
 #hours, #minutes, #secunds {
     display: inline;
 }
+
+/*==========LISTA DE TAREFAS==========*/
+
+#input_nova_terefa, #button_nova_tarefa {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+ul li {
+    margin-left: 30px;
+}
